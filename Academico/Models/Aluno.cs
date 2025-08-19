@@ -1,11 +1,16 @@
-﻿namespace Academico.Models
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+
+namespace Academico.Models
 {
     public class Aluno
     {
-        public int Nome { get; set; }
+        public string Nome { get; set; }
+        [DisplayName(
+            "E-mail")]
+        public string Email { get; set; }
 
-        public int Email { get; set; }
-
+        [DisplayName("CEP")]
         public int Cep { get; set; }
 
 
