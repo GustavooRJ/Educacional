@@ -5,6 +5,7 @@ namespace Academico.Models
 {
     public class Aluno
     {
+        public int AlunoID { get; set; }
         public string Nome { get; set; }
         [DisplayName(
             "E-mail")]
