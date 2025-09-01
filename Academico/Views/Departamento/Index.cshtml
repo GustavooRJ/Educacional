@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Academico.Models.Departamento>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Criar Novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartamentoID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefone)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartamentoID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefone)
+            </td>
+            <td>
+                    @Html.ActionLink("Editar", "Editar", new { id = item.DepartamentoID }) |
+                    @Html.ActionLink("Detalhes", "Detalhes", new { id = item.DepartamentoID }) |
+                @Html.ActionLink("Deletar", "Deletar", new { id=item.DepartamentoID })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
